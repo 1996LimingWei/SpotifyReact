@@ -1,4 +1,4 @@
-# SpotifyReact
+![image](https://github.com/user-attachments/assets/0fbf9536-f1fa-4cae-8273-094f3f8d1f21)# SpotifyReact
 A starting project to build a Spotify using React. It creates a Spotify clone that not only has many of Spotify's features but also includes lyric lookup for any song you want.
 
 
@@ -28,5 +28,33 @@ The first step is to request authorization from the user so that the app can acc
   6. show_dialog	Optional Whether or not to force the user to approve the app again
 
 Next, setup the authorization based on documentations. You can skip my [detailed walkthrough](https://github.com/1996LimingWei/SpotifyReact/blob/d13b6d33703ab9844b48cb95d4ec1dbcc9dd7efd/AuthorizationSetupDetails.md) if you are already familar with it.
+
+After successful setup, we observe the auth code inside the url in the browser window:
+http://localhost:3000/?code=Your_code_is_here. Next we need to convert this code to the access token, for the user to authenticate them for different request.
+
+## Server Login Route
+
+We use a library called [spotify Web Api Node](https://www.npmjs.com/package/spotify-web-api-node) that makes everything easier.
+
+Read the authorization section, we need three pieces of info to get authorized:
+  1. The token expires time
+  2. The access token
+  3. The refresh token
+
+We need to do this on the server because it requires our client a secret, which we can get from spotify developer dashboard.
+
+So our next task is to set up a server that we can use for login code, we can start by creating a server.js in the server dir. 
+
+Next, init the package.json by running ```cd ../server/``` and ```npm init -y```
+
+Follow the [detailed documentation](https://github.com/1996LimingWei/SpotifyReact/blob/c37e576c3d7f160f458fe595f4b518e9da9f95ac/ServerLoginRoute.md) to install various dependencies and server setup. 
+
+## useAuth Hook
+
+Next, we need to get the access code from url everytime we access the browser page, and use that for authorization. 
+
+Follow the [detailed documentation](https://github.com/1996LimingWei/SpotifyReact/blob/c37e576c3d7f160f458fe595f4b518e9da9f95ac/ServerLoginRoute.md) to setup useAuth hook. 
+
+
 
 
