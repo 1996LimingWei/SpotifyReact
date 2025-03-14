@@ -9,6 +9,17 @@
   - The app.js file is often the root component of a React application. When we import the minified Bootstrap CSS in app.js, it makes the Bootstrap styles available globally.
 - We can remove App.css, App.test.js, index.css, and logo.svg from src dir. We just need a bare-bone application
 - In Login.js, initialize the bootstrap container by adding it to the export default function login’s return method
+```
+export default function Login() {
+  return (
+    <Container className='d-flex justify-content-center align-item-center' style={{ minHeight:"100vh" }}>
+        <a className="btn btn-success btn-lg" href={AUTH_URL}>
+            Login with Spotify
+        </a>
+    </Container>
+  )
+}
+```
   - The container class in Bootstrap is a fundamental part of its responsive grid system(rows and columns, gutter). It provides a centered and responsive wrapper for your content. It helps in organizing the content within the login.js component.
 - After solving conflicts from removing unnecessary files, the browser window should look like this: 
 	![截屏2025-03-14 15 37 22](https://github.com/user-attachments/assets/0473497c-83a9-4ce9-b4ef-a546af15b7d5)
