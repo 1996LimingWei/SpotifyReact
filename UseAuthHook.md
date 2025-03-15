@@ -36,7 +36,7 @@
 - Next, we use axios in order to call the api, because it's so much easier than using fetch. Run ```cd ../client/``` and ```npm i axios ```
 - If we go back to the server.js, we see that we are not running our application on any port. What does it mean?
   - A port is a number-based identifier that is used to distinguish different applications running on a computer. It's like a specific "door" through which data can flow in and out of a particular process. Each port number is unique within a given system.
-  - 
+  - When a server application "listens" to a port, it means that the application is configured to wait for incoming network connections on that specific port. Like the server is "sitting by the door" and waiting for clients to send requests
 - We need also add app.listen(3001) for now. With this code, we post our code to this 3001 route. After post the code, we received either pending, fulfilled, or reject. And then we use .then to log what is returned 
 •	Axios 是一个基于 Promise 的 HTTP 客户端，可用于浏览器和 Node.js 环境中。它主要用于向服务器发起 HTTP 请求，比如 GET、POST、PUT、DELETE 等。相比于原生的 fetch API，它有以下优点：
 a)	简洁易用：提供了更简洁直观的 API，代码可读性较好。
