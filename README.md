@@ -53,8 +53,10 @@ Follow the [detailed documentation](https://github.com/1996LimingWei/SpotifyReac
 
 Next, we need to get the access code from url everytime we access the browser page, and use that for authorization. 
 
-Follow the [detailed documentation](https://github.com/1996LimingWei/SpotifyReact/blob/c37e576c3d7f160f458fe595f4b518e9da9f95ac/ServerLoginRoute.md) to setup useAuth hook. 
+Follow the [detailed documentation](https://github.com/1996LimingWei/SpotifyReact/blob/fcc8c4960f49234c5b1372608289d5287b3eb9f4/UseAuthHook.md) to setup useAuth hook. We return the access token in useAuth, which is essential to call all different spotify apis. But it only last for an hour
 
+## Refresh Token Automatically
 
+Of course we dont want the user to click refresh every hour, we want server to refresh for us. And on the client side, we can set up the access code to call the server.
 
-
+Follow the [detailed documentation]() to setup useAuth hook. 
