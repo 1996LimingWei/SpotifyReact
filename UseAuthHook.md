@@ -33,15 +33,17 @@
   - useEffect determines when to re-run the callback function based on changes in the dependency array. If the dependency array is omitted, that is, written as useEffect(() => {/* Side-effect logic */});, then the callback function of useEffect will just execute after each component rendering is completed.
   - Also, useEffect has a cleanup function, which is used to clear side-effects when the component is unmounted or when the dependencies are updated.
 
-- Next, we use axios in order to call the api, because it's so much easier than using fetch. Run ```cd ../client/``` and ```npm i axios ```
+- Next, we use axios in order to call the api, because it's easier than using fetch. Run ```cd ../client/``` and ```npm i axios ```
+  - Axios is a Promise - based HTTP client that can be used in both browser and Node.js environments. It is mainly used to send HTTP requests to servers, such as GET, POST, PUT, DELETE, etc. Compared with the native fetch API, it has the following advantages:
+    - Concise and easy: It provides a more concise and intuitive API, increase readability.
+    - Interceptors: It can intercept and process requests before they are sent and responses after they are returned, which is convenient for global request and response processing, such as adding request headers and handling errors.
+    - Promise support: It returns a Promise object, which facilitates the use of then and catch for chained calls to handle asynchronous operations.
+      - Asynchronous operations are tasks that don't block the execution of subsequent code in a program. They let a program carry on with other code while a time-consuming task, like a network request (e.g., with Axios), file reading, or a timer operation (using setTimeout), is in progress.
 - If we go back to the server.js, we see that we are not running our application on any port. What does it mean?
   - A port is a number-based identifier that is used to distinguish different applications running on a computer. It's like a specific "door" through which data can flow in and out of a particular process. Each port number is unique within a given system.
   - When a server application "listens" to a port, it means that the application is configured to wait for incoming network connections on that specific port. Like the server is "sitting by the door" and waiting for clients to send requests
 - We need also add app.listen(3001) for now. With this code, we post our code to this 3001 route. After post the code, we received either pending, fulfilled, or reject. And then we use .then to log what is returned 
-•	Axios 是一个基于 Promise 的 HTTP 客户端，可用于浏览器和 Node.js 环境中。它主要用于向服务器发起 HTTP 请求，比如 GET、POST、PUT、DELETE 等。相比于原生的 fetch API，它有以下优点：
-a)	简洁易用：提供了更简洁直观的 API，代码可读性较好。
-b)	拦截器：可以在请求发送前和响应返回后拦截处理，方便进行全局的请求和响应处理，例如添加请求头、处理错误等。
-c)	支持 Promise：返回的是 Promise 对象，便于使用 then 和 catch 进行链式调用处理异步操作。
+
 •	Update nodemon as we are going to run the server. node 是运行 JavaScript 代码的运行环境。server.js 通常是一个 Node.js 应用程序的主入口文件，里面包含了服务器相关的代码。运行 node server.js 命令就是启动这个 Node.js 服务器应用。 nodemon 前面提到过，会监视项目中的文件变化，一旦检测到文件被修改，它会自动重启 Node.js 应用，无需手动操作。 
 •	next, we make sure we pull in the useAuth to the dashboard.js, so that dashboard component can later decide what to do with the accessToken.  
 •	Debug: We then immediately see this in the console of the web page. We just need to install npm i cors and import it to the server.js:  
